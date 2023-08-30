@@ -5,7 +5,7 @@ export const CommandLine = (props) => {
 
     return (
         <div>
-            <span class="prefix">guest</span>@<span class="secondary">shop bot</span>:~$ {command}
+            <span class="prefix">guest</span>@<span class="secondary">term.js</span>:~$ {command}
         </div>
     );
 };

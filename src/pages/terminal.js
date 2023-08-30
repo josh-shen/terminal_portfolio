@@ -91,7 +91,7 @@ export default function Terminal() {
                     ))}     
                 </div>
                 <div ref={scrollRef}>
-                    <span class="prefix">guest</span>@<span class="secondary">shop bot</span>{":~$ "}
+                    <span class="prefix">guest</span>@<span class="secondary">terminal.js</span>{":~$ "}
                     <input 
                         class="commandPrompt"
                         ref={commandRef} 
