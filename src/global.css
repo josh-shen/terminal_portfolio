@@ -1,0 +1,28 @@
+html * {
+    font-family: "Cascadia Code", monospace;
+    font-size: medium;
+	--text-rgb: 193, 202, 194;
+	--background-rgb: 31, 36, 48;
+}
+
+body {
+	color: rgb(var(--text-rgb));
+	background: rgb(var(--background-rgb));
+}
+
+.commandPrompt {
+    border:none;
+    outline: none;
+    margin:0;
+    padding:0;
+    background-color: transparent;
+    color: rgb(var(--text-rgb))
+}
+
+.prefix {
+	color: rgb(255, 173, 85);
+}
+
+.secondary {
+	color: rgb(213, 255, 128);
+}
