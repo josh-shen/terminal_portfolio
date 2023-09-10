@@ -14,7 +14,7 @@ export default function Terminal() {
     const commandRef = useRef(null);
     const scrollRef = useRef(null);
     const [inputValue, setInputValue] = useState("");
-    const [appendedElements, setAppendedElements] = useState([])
+    const [appendedElements, setAppendedElements] = useState([<Welcome command={"welcome"}></Welcome>])
 
     const handleSubmit = () => {
         history.push(inputValue)
