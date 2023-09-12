@@ -9,6 +9,7 @@ import { Socials } from "../commands/socials.js";
 import { Welcome } from "../commands/welcome.js";
 
 const history = []
+let historyIndex = 0
 
 export default function Terminal() {
     const commandRef = useRef(null);
@@ -31,7 +32,6 @@ export default function Terminal() {
                 break
             case "clear":
                 setAppendedElements([])
-                history.length = 0
                 break; 
             case "echo":
                 newElement = <Echo command={inputValue} string={args.join(" ")}></Echo>
@@ -68,6 +68,22 @@ export default function Terminal() {
         if (event.key === "Enter") {
             handleSubmit(event);
         }
+        if (event.key === "ArrowUp"){
+            event.preventDefault()
+            if (history.length > 0 && history.length > historyIndex){
+                historyIndex++
+                setInputValue(history[history.length - historyIndex])
+            }
+        }
+        if (event.key === "ArrowDown"){
+            if (history.length > 0 && historyIndex > 0){
+                historyIndex--
+                setInputValue(history[history.length - historyIndex])
+            }
+            if (historyIndex === 0){
+                setInputValue("")
+            }
+        }
     };
     //qol - maintian focus on input, auto scroll down
     const regainFocus = event => {
@@ -75,7 +91,7 @@ export default function Terminal() {
     };
     useEffect(() => {
         if (commandRef.current) {
-          commandRef.current.focus();
+            commandRef.current.focus();
         }
     }, []);
     useLayoutEffect(() => {
