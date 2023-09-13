@@ -14,7 +14,7 @@ export const History = (props) => {
         ))
     }
     return (
-        <div style={{paddingBottom: 10}}>
+        <div>
             <CommandLine command={command}></CommandLine>
             {getHistory()}
         </div>

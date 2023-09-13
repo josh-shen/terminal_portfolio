@@ -22,8 +22,9 @@ export const Socials = (props) => {
     const command = props.command
 
     return (
-        <div style={{paddingBottom: 10}}>
+        <div style={{paddingBottom: 15}}>
             <CommandLine command={command}></CommandLine>
+            <br></br>
             <table>
                 <SocialLine social={"1. LinkedIn"}  link={"https://www.linkedin.com/in/jo-shshen/"}></SocialLine>
                 <SocialLine social={"2. GitHub"}    link={"https://github.com/josh-shen"}></SocialLine>

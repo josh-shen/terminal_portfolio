@@ -6,7 +6,7 @@ export const Echo = (props) => {
     const string = props.string
 
     return (
-        <div style={{paddingBottom: 10}}>
+        <div>
             <CommandLine command={command}></CommandLine>
             {string}
         </div>

@@ -22,8 +22,9 @@ export const Help = (props) => {
     const command = props.command
 
     return (
-        <div style={{paddingBottom: 10}}>
+        <div style={{paddingBottom: 15}}>
             <CommandLine command={command}></CommandLine>
+            <br></br>
             <table>
                 <HelpLine command={"about"}             description={"about Josh Shen"}></HelpLine>
                 <HelpLine command={"clear"}             description={"clears the terminal"}></HelpLine>
