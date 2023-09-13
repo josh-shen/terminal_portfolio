@@ -10,7 +10,7 @@ import { Invalid } from "../commands/invalid.js";
 import { Socials } from "../commands/socials.js";
 import { Welcome } from "../commands/welcome.js";
 
-const history = []
+const history = ["welcome"]
 let historyIndex = 0
 
 export default function Terminal() {
