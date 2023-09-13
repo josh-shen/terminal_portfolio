@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { About } from "../commands/about.js";
 import { CommandLine } from "../commands/command.js";
+import { CurrDate } from "../commands/date.js";
 import { Echo } from "../commands/echo.js";
 import { Education } from "../commands/education.js";
 import { Email } from "../commands/email.js";
@@ -37,6 +38,9 @@ export default function Terminal() {
             case "clear":
                 setAppendedElements([])
                 break; 
+            case "date":
+                newElement = <CurrDate command={inputValue}></CurrDate>
+                break
             case "echo":
                 newElement = <Echo command={inputValue} string={args.join(" ")}></Echo>
                 break

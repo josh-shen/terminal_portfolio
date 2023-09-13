@@ -4,7 +4,7 @@ import { CommandLine } from "./command"
 export const Welcome = (props) => {
     const command = props.command
 
-    const { name, version } = require("../../package.json")
+    const { version } = require("../../package.json")
 
     return (
         <div style={{paddingBottom: 15}}>
