@@ -17,7 +17,7 @@ export const Welcome = (props) => {
                 This portfolio's source code can be found in this project's <a class="prefix" href="https://github.com/josh-shen/portfolio" target="_blank" rel="noopener noreferrer">GitHub repo</a>
             </div>
             ---
-            <div style={{paddingTop: 10}}>For a list of available commands, type <span class="secondary">"help"</span></div>
+            <div style={{paddingTop: 10}}>For a list of available commands, type <span class="secondary">'help'</span></div>
         </div>
     )
 }
