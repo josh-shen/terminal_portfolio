@@ -28,13 +28,14 @@ export const Help = (props) => {
             <table>
                 <HelpLine command={"about"}             description={"about Josh Shen"}></HelpLine>
                 <HelpLine command={"clear"}             description={"clears the terminal"}></HelpLine>
+                <HelpLine command={'date'}              description={"display the current date and time"}></HelpLine>
                 <HelpLine command={"echo [string]"}     description={"display value of input string"}></HelpLine>
                 <HelpLine command={"education"}         description={"show education background"}></HelpLine>
                 <HelpLine command={"email"}             description={"show email for contact"}></HelpLine>
                 <HelpLine command={"help"}              description={"list all available commands"}></HelpLine>
                 <HelpLine command={"history"}           description={"list all past commands from current session"}></HelpLine>
                 <HelpLine command={"socials"}           description={"show socials"}></HelpLine>
-                <HelpLine command={"welcome"}           description={"show welcome line"}></HelpLine>
+                <HelpLine command={"welcome"}           description={"display the welcome line"}></HelpLine>
             </table>
         </div>
     )
