@@ -26,3 +26,7 @@ body {
 .secondary {
 	color: rgb(213, 255, 128);
 }
+
+.error {
+    color: rgb(226, 126, 115);
+}

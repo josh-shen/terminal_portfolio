@@ -1,10 +1,12 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { About } from "../commands/about.js";
+import { CommandLine } from "../commands/command.js";
 import { Echo } from "../commands/echo.js";
 import { Education } from "../commands/education.js";
 import { Email } from "../commands/email.js";
 import { Help } from "../commands/help.js"
 import { History } from "../commands/history.js";
+import { Invalid } from "../commands/invalid.js";
 import { Socials } from "../commands/socials.js";
 import { Welcome } from "../commands/welcome.js";
 
@@ -18,7 +20,9 @@ export default function Terminal() {
     const [appendedElements, setAppendedElements] = useState([<Welcome command={"welcome"}></Welcome>])
 
     const handleSubmit = () => {
-        history.push(inputValue)
+        if (inputValue !== ""){
+            history.push(inputValue)
+        }
         setInputValue("");
 
         let newElement;
@@ -54,7 +58,11 @@ export default function Terminal() {
             case "welcome":
                 newElement = <Welcome command={inputValue}></Welcome>
                 break
+            case "":
+                newElement = <CommandLine></CommandLine>
+                break
             default:
+                newElement = <Invalid command={inputValue}></Invalid>
                 break
         }
         setAppendedElements(prevElements => [...prevElements, newElement]);
@@ -83,6 +91,10 @@ export default function Terminal() {
             if (historyIndex === 0){
                 setInputValue("")
             }
+        }
+        if (event.ctrlKey && event.key === "l"){
+            event.preventDefault()
+            setAppendedElements([])
         }
     };
     //qol - maintian focus on input, auto scroll down
