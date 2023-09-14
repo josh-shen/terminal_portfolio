@@ -19,7 +19,7 @@ export const Welcome = (props) => {
  ╚════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝ (Version ${version})
                  `}</code>
             </pre>
-            <div style={{paddingTop: 10, paddingBottom: 10}}>
+            <div style={{paddingBottom: 15}}>
                 This portfolio's source code can be found in this project's <a class="highlight" href="https://github.com/josh-shen/terminal_portfolio" target="_blank" rel="noopener noreferrer">GitHub repo</a>
             </div>
             ---
