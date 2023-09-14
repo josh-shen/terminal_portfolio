@@ -10,6 +10,7 @@ import { Help } from "../commands/help.js"
 import { HelpCommand } from "../commands/helpCommand.js";
 import { History } from "../commands/history.js";
 import { Invalid } from "../commands/invalid.js";
+import { IPconfig } from "../commands/ipconfig.js";
 import { LinkedIn } from "../commands/linkedin.js";
 import { Welcome } from "../commands/welcome.js";
 
@@ -67,6 +68,9 @@ export default function Terminal() {
                 break
             case "history":
                 newElement = <History command={inputValue} history={history}></History>
+                break
+            case "ipconfig":
+                newElement = <IPconfig command={inputValue}></IPconfig>
                 break
             case "linkedin":
                 newElement = <LinkedIn command={inputValue}></LinkedIn>
