@@ -5,13 +5,15 @@ import { CurrDate } from "../commands/date.js";
 import { Echo } from "../commands/echo.js";
 import { Education } from "../commands/education.js";
 import { Email } from "../commands/email.js";
+import { Github } from "../commands/github.js";
 import { Help } from "../commands/help.js"
+import { HelpCommand } from "../commands/helpCommand.js";
 import { History } from "../commands/history.js";
 import { Invalid } from "../commands/invalid.js";
-import { Socials } from "../commands/socials.js";
+import { LinkedIn } from "../commands/linkedin.js";
 import { Welcome } from "../commands/welcome.js";
 
-const history = ["welcome"]
+let history = ["welcome"]
 let historyIndex = 0
 
 export default function Terminal() {
@@ -24,7 +26,6 @@ export default function Terminal() {
         if (inputValue !== ""){
             history.push(inputValue)
         }
-        setInputValue("");
 
         let newElement;
 
@@ -38,6 +39,10 @@ export default function Terminal() {
             case "clear":
                 setAppendedElements([])
                 break; 
+            case "clhy":
+                history = []
+                newElement = <CommandLine command={inputValue}></CommandLine>
+                break
             case "date":
                 newElement = <CurrDate command={inputValue}></CurrDate>
                 break
@@ -50,14 +55,21 @@ export default function Terminal() {
             case "email":
                 newElement = <Email command={inputValue}></Email>
                 break
+            case "github":
+                newElement = <Github command={inputValue}></Github>
+                break
             case "help":
+                if (args.length > 0) {
+                    newElement = <HelpCommand command={inputValue} string={args.join(" ")}></HelpCommand>
+                    break
+                }
                 newElement = <Help command={inputValue}></Help>
                 break
             case "history":
                 newElement = <History command={inputValue} history={history}></History>
                 break
-            case "socials":
-                newElement = <Socials command={inputValue}></Socials>
+            case "linkedin":
+                newElement = <LinkedIn command={inputValue}></LinkedIn>
                 break
             case "welcome":
                 newElement = <Welcome command={inputValue}></Welcome>
@@ -70,6 +82,7 @@ export default function Terminal() {
                 break
         }
         setAppendedElements(prevElements => [...prevElements, newElement]);
+        setInputValue("");
     };
 
     //command input handlers
@@ -99,6 +112,9 @@ export default function Terminal() {
         if (event.ctrlKey && event.key === "l"){
             event.preventDefault()
             setAppendedElements([])
+        }
+        if (event.altKey && event.key === "F7"){
+            history = []
         }
     };
     //qol - maintian focus on input, auto scroll down

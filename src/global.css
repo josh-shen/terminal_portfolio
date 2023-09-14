@@ -27,6 +27,9 @@ body {
 	color: rgb(213, 255, 128);
 }
 
+.highlight {
+    color: rgb(241, 198, 111)
+}
 .error {
     color: rgb(226, 126, 115);
 }
