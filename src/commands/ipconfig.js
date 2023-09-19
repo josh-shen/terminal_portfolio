@@ -1,30 +1,30 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { CommandLine } from "./command"
 
 export const IPconfig = (props) => {
     const command = props.command
+    
+    const [response, setResponse] = useState("")
 
-    const os = require("os-browserify")
-    const network = os.networkInterfaces()
-
-    for (var key in network) {
-        console.log(key);
-        var net_info = network[key];
-            
-        net_info.forEach(element => {      
-            console.log("\tinterface:");
-            
-                for (var attr in element){
-                    console.log("\t\t" + attr + 
-                        " : " + element[attr] );
-                }
-        });  
-    }
-
+    useEffect (() => {
+        fetch("http://ipwho.is/")
+        .then(data => {
+            return data.json()
+        })
+        .then(response => {
+            setResponse(response)
+        })
+    }, [])
+    
     return (
         <div style={{paddingBottom: 15}}>
             <CommandLine command={command}></CommandLine>
             <br></br>
+            Connection-specific DNS suffix . : {response.connection.domain}
+            <br></br>
+            IP Address . . . . . . . . . . . : {response.ip}
+            <br></br>
+            Type . . . . . . . . . . . . . . : {response.type}
         </div>
     )
 }
