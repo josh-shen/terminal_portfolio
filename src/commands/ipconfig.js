@@ -3,28 +3,33 @@ import { CommandLine } from "./command"
 
 export const IPconfig = (props) => {
     const command = props.command
-    
-    const [response, setResponse] = useState("")
+    const [address, setAddress] = useState("")
 
-    useEffect (() => {
-        fetch("http://ipwho.is/")
+    useEffect(() => {
+        const request = new Request("https://api.ipify.org")
+        const headers = request.headers
+
+        console.log(headers)
+
+        fetch(request).then(response => {
+            return response.text()
+        })
         .then(data => {
-            return data.json()
+            setAddress(data)
         })
-        .then(response => {
-            setResponse(response)
-        })
-    }, [])
-    
+    }, []) 
+
     return (
         <div style={{paddingBottom: 15}}>
             <CommandLine command={command}></CommandLine>
             <br></br>
-            Connection-specific DNS suffix . : {response.connection.domain}
+            Host Name . . . : {window.location.hostname}
             <br></br>
-            IP Address . . . . . . . . . . . : {response.ip}
+
             <br></br>
-            Type . . . . . . . . . . . . . . : {response.type}
+            User Agent. . . : {navigator.userAgent}
+            <br></br>
+            IPv4 Address. . : {address}
         </div>
     )
 }
