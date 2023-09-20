@@ -6,12 +6,7 @@ export const IPconfig = (props) => {
     const [address, setAddress] = useState("")
 
     useEffect(() => {
-        const request = new Request("https://api.ipify.org")
-        const headers = request.headers
-
-        console.log(headers)
-
-        fetch(request).then(response => {
+        fetch("https://api.ipify.org").then(response => {
             return response.text()
         })
         .then(data => {
@@ -19,6 +14,7 @@ export const IPconfig = (props) => {
         })
     }, []) 
 
+    //navigator.connection.type support not available yet...
     return (
         <div style={{paddingBottom: 15}}>
             <CommandLine command={command}></CommandLine>
@@ -27,7 +23,7 @@ export const IPconfig = (props) => {
             <br></br>
 
             <br></br>
-            User Agent. . . : {navigator.userAgent}
+            User-Agent. . . : {navigator.userAgent}
             <br></br>
             IPv4 Address. . : {address}
         </div>

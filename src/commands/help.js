@@ -9,7 +9,7 @@ export const Help = (props) => {
             <CommandLine command={command}></CommandLine>
             Available commands:
             <br></br>
-            about, clear, clhy, date, echo, education, email, github, help, history, linkedin, welcome
+            about, clear, clhy, date, echo, education, email, github, help, history, ipconfig, linkedin, welcome
             <br></br>
             <br></br>
             Type <span class="highlight">'help [command]'</span> for more command specific information

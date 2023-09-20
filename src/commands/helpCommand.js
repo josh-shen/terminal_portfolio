@@ -39,6 +39,9 @@ export const HelpCommand = (props) => {
         case "history":
             commandHelp = string + " - list all commands from current session"
             break
+        case "ipconfig":
+            commandHelp = string + " - list your network information values"
+            break
         case "linkedin":
             commandHelp = string + " - go to my LinkedIn profile"
             break
