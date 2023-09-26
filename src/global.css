@@ -10,6 +10,10 @@ body {
 	background: rgb(var(--background-rgb));
 }
 
+input {
+    width: 70%;
+}
+
 .commandPrompt {
     border:none;
     outline: none;

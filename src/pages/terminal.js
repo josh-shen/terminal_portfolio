@@ -12,6 +12,7 @@ import { History } from "../commands/history.js";
 import { Invalid } from "../commands/invalid.js";
 import { IPconfig } from "../commands/ipconfig.js";
 import { LinkedIn } from "../commands/linkedin.js";
+import { Ping } from "../commands/ping.js";
 import { Welcome } from "../commands/welcome.js";
 
 let history = ["welcome"]
@@ -74,6 +75,13 @@ export default function Terminal() {
                 break
             case "linkedin":
                 newElement = <LinkedIn command={inputValue}></LinkedIn>
+                break
+            case "ping":
+                if (args.length === 2){
+                    newElement = <Ping command={inputValue} target={args[0]} n={args[1]}></Ping>
+                    break
+                }
+                newElement = <Ping command={inputValue} target={args.join(" ")} n={4}></Ping>
                 break
             case "welcome":
                 newElement = <Welcome command={inputValue}></Welcome>
