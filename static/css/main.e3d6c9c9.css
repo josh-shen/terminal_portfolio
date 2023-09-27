@@ -1,0 +1,2 @@
+html *{--text-rgb:193,202,194;--background-rgb:31,36,48;font-family:Lucidia Console,monospace;font-size:medium}body{background:rgb(var(--background-rgb));color:rgb(var(--text-rgb))}input{width:70%}.commandPrompt{background-color:initial;border:none;color:rgb(var(--text-rgb));margin:0;outline:none;padding:0}.prefix{color:#ffad55}.secondary{color:#d5ff80}.highlight{color:#f1c66f}.error{color:#e27e73}
+/*# sourceMappingURL=main.e3d6c9c9.css.map*/
