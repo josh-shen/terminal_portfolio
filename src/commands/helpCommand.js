@@ -45,7 +45,7 @@ export const HelpCommand = (props) => {
             commandHelp = string + " - go to my LinkedIn profile"
             break
         case "ping":
-            commandHelp = string + " - ping a target address. If an address is not specified, will ping your loopback address. This function is contained in a Google Cloud Function that performs the actual ICMP echo request to the target address."
+            commandHelp = string + " - [address] ping a target address. If an address is not specified, will ping your loopback address. This function is contained in a Google Cloud Function that performs the actual ICMP echo request to the target address."
             break
         case "welcome": 
             commandHelp = string + " - display the terminal welcome line"
